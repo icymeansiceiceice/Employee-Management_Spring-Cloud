@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeResponse {
-
+public class AddressResponse {
+    
     private int id;
-    private String name;
-    private String email;
-    private String bloodGroup;
-    private AddressResponse addressResponse;
+    private String lane1;
+    private String lane2;
+    private long zip;
+    private String state;
+
 }

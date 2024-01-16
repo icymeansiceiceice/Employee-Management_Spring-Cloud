@@ -1,20 +1,16 @@
-package com.employeeapp.appConfig;
+package com.addressapp.appConfig;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
+
 
 @Configuration
-public class EmployeeAppConfig {
-    
+public class AddressAppConfig {
+
     @Bean
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
 
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
 }
