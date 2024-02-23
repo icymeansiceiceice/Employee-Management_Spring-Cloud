@@ -12,7 +12,7 @@ import com.addressapp.entity.Address;
 @Repository
 public interface AddressRepo extends JpaRepository<Address,Integer> {
     
-        @Query(value = "SELECT ea.lane1,ea.lane2,ea.state,ea.zip FROM testingcloud.address ea join testingcloud.employee e on e.id = ea.employee_id where ea.employee_id = :employeeId",nativeQuery = true)
-        List<Address> findAddressbyEmployeeId(@Param("employeeId") int employeeId);
+        @Query(value = "Select ea.id,ea.lane1,ea.lane2,ea.state,ea.zip from testingcloud.address ea join testingcloud.employee e on e.id = ea.employee_id where ea.employee_id = ?1",nativeQuery = true)
+        List<Address> findAddressbyEmployeeId(int employeeId);
 
 }
