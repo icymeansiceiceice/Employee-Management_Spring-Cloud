@@ -2,8 +2,11 @@ package com.employeeapp.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.employeeapp.response.AddressResponse;
 import com.employeeapp.response.EmployeeResponse;
 import com.employeeapp.services.EmployeeService;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +20,14 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+
+
+    @GetMapping("/employees")
+    public ResponseEntity<List<EmployeeResponse>> getEmployee(){
+        List<EmployeeResponse> employeelist = employeeService.getAllEmployee();
+        return ResponseEntity.status(HttpStatus.OK).body(employeelist);
+    }
     
     
     @GetMapping("/employee/{id}")
